@@ -1,0 +1,128 @@
+/* Weather Animations */
+.weather-form.rainy {
+    background-color: #a4b0be;
+    color: #2f3542;
+    position: relative;
+    overflow: hidden; /* Ensure droplets stay within the container */
+  }
+  
+  .weather-form.rainy::before {
+    content: '☁️';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 50px;
+  }
+  
+  .droplet {
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    background: #3498db;
+    border-radius: 50%;
+    animation: fall 1s infinite;
+    opacity: 0.7;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -10px;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+  /* Create multiple droplets with different delays */
+  .droplet:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+  }
+  .droplet:nth-child(2) {
+    left: 7%;
+    animation-delay: 0.2s;
+  }
+  .droplet:nth-child(3) {
+    left: 9%;
+    animation-delay: 0.4s;
+  }
+  .droplet:nth-child(4) {
+    left: 12%;
+    animation-delay: 0.6s;
+  }
+  .droplet:nth-child(5) {
+    left: 14%;
+    animation-delay: 0.4s;
+  }
+  .droplet:nth-child(6) {
+    left: 16%;
+    animation-delay: 0.6s;
+  }
+  
+  
+  
+  .weather-form.sunny {
+    background-color: #ffeaa7;
+    color: #2d3436;
+  }
+  
+  .weather-form.sunny::before {
+    content: '☀️';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 50px;
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .weather-form.windy {
+    background-color: #74b9ff;
+    color: white;
+    position: relative;
+  }
+  
+  .weather-form.windy::before {
+    content: '🍃 ༄';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: wind 1s linear infinite;
+  }
+  
+  @keyframes wind {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .weather-form.snowy {
+    background-color: #dfe6e9;
+    color: #2d3436;
+    position: relative;
+  }
+  
+  .weather-form.snowy::before {
+    content: '❄️';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    animation: fall 2s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+  
